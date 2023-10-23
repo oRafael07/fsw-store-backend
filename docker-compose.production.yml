@@ -1,0 +1,14 @@
+version: "3"
+
+name: fsw-services
+
+services:
+  postgres:
+    container_name: fsw-db
+    image: bitnami/postgresql
+    ports:
+      - ${POSTGRES_PORT}:5432
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRES_DATABASE}
+      POSTGRESQL_LOG_CONNECTIONS: true
